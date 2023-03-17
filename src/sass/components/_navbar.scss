@@ -1,0 +1,129 @@
+.navbar {
+  width: 100%;
+  background-color: #fff;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include respond(TAB) {
+    justify-content: none;
+    display: block;
+  }
+
+  &_header {
+    padding: 2rem;
+    @include respond(TAB) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    &_img {
+      width: 30rem;
+      @include respond(PHONE) {
+        width: 20rem;
+      }
+    }
+
+    &_btn {
+      &,
+      &:link,
+      &:visited {
+        font-size: 4rem;
+        background: none;
+        border: none;
+        color: #1098ad;
+      }
+
+      @include respond(LAND) {
+        display: none;
+      }
+      @include respond(TAB) {
+        &,
+        &:link,
+        &:visited {
+          font-size: 4rem;
+          background: none;
+          border: none;
+          color: #1098ad;
+          display: block;
+          transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        @include respond(PHONE) {
+          font-size: 3.3rem;
+          align-self: stretch;
+        }
+
+        &:hover {
+          transform: rotate(90deg);
+          cursor: pointer;
+          color: #222222;
+        }
+      }
+    }
+  }
+
+  &_links {
+    @include respond(TAB) {
+      height: 0;
+      overflow: hidden;
+      transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    &_list {
+      display: flex;
+
+      align-items: center;
+
+      gap: 3rem;
+
+      @include respond(TAB) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+    &_li {
+      list-style: none;
+      width: 100%;
+    }
+
+    &_link {
+      text-decoration: none;
+      font-size: 2.5rem;
+      color: #1098ad;
+      font-weight: bold;
+      display: block;
+      padding: 1rem;
+      transition: all 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+      &:hover {
+        background-color: rgb(10, 54, 92);
+        color: #1098ad;
+      }
+    }
+  }
+
+  &_social {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    @include respond(TAB) {
+      display: none;
+    }
+
+    &_list {
+      list-style: none;
+    }
+    &_link {
+      font-size: 2rem;
+      color: #1098ad;
+    }
+  }
+}
+
+.showcontainer {
+  @include respond(TAB) {
+    height: 30rem;
+  }
+}
